@@ -19,7 +19,3 @@ services:
         value: sqlite:///./proverkakg.db
       - key: PYTHON_VERSION
         value: "3.11.0"
-    disk:
-      name: proverkakg-data
-      mountPath: /opt/render/project/src/backend
-      sizeGB: 1
