@@ -29,8 +29,8 @@ export const translations = {
       allClass: 'Бардык класс', economy: 'Эконом', comfort: 'Комфорт', business: 'Бизнес', premium: 'Премиум',
     },
     regions: {
-      all: 'Бардык облустар', bishkek: 'Бишкек', chuy: 'Чүй', osh: 'Ош', manas: 'Манас',
-      naryn: 'Нарын', issykKul: 'Ысык-Көл', talas: 'Талас', batken: 'Баткен',
+      bishkek: 'Бишкек', osh: 'Ош', manas: 'Манас', kant: 'Кант',
+      karakol: 'Каракол', tokmok: 'Токмок', issykKul: 'Ысык-Көл',
     },
     whatsapp: { label: 'WhatsApp' },
     stats: { objects: 'объект', building: 'курулуп жатат', commissioned: 'берилген', avgPrice: 'орточо баа/м²', verified: 'текшерилген' },
@@ -81,8 +81,8 @@ export const translations = {
       allClass: 'Все классы', economy: 'Эконом', comfort: 'Комфорт', business: 'Бизнес', premium: 'Премиум',
     },
     regions: {
-      all: 'Все области', bishkek: 'Бишкек', chuy: 'Чуй', osh: 'Ош', manas: 'Манас',
-      naryn: 'Нарын', issykKul: 'Иссык-Куль', talas: 'Талас', batken: 'Баткен',
+      bishkek: 'Бишкек', osh: 'Ош', manas: 'Манас', kant: 'Кант',
+      karakol: 'Каракол', tokmok: 'Токмок', issykKul: 'Иссык-Куль',
     },
     whatsapp: { label: 'WhatsApp' },
     stats: { objects: 'объектов', building: 'строятся', commissioned: 'сданы', avgPrice: 'ср. цена/м²', verified: 'проверены' },
@@ -133,8 +133,8 @@ export const translations = {
       allClass: 'All classes', economy: 'Economy', comfort: 'Comfort', business: 'Business', premium: 'Premium',
     },
     regions: {
-      all: 'All regions', bishkek: 'Bishkek', chuy: 'Chuy', osh: 'Osh', manas: 'Manas',
-      naryn: 'Naryn', issykKul: 'Issyk-Kul', talas: 'Talas', batken: 'Batken',
+      bishkek: 'Bishkek', osh: 'Osh', manas: 'Manas', kant: 'Kant',
+      karakol: 'Karakol', tokmok: 'Tokmok', issykKul: 'Issyk-Kul',
     },
     whatsapp: { label: 'WhatsApp' },
     stats: { objects: 'complexes', building: 'building', commissioned: 'completed', avgPrice: 'avg price/m²', verified: 'verified' },

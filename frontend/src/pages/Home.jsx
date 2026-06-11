@@ -3,7 +3,7 @@ import { api } from '../api'
 import ComplexCard from '../components/ComplexCard'
 import HeroSlider from '../components/HeroSlider'
 import { useLocale } from '../context/LocaleContext'
-import { REGIONS } from '../constants/regions'
+import { useRegion } from '../context/RegionContext'
 
 export default function Home() {
   const { t } = useLocale()
@@ -12,7 +12,7 @@ export default function Home() {
   const [search, setSearch] = useState('')
   const [status, setStatus] = useState('')
   const [classType, setClassType] = useState('')
-  const [region, setRegion] = useState('')
+  const { region } = useRegion()
   const [verifiedOnly, setVerifiedOnly] = useState(false)
   const [loading, setLoading] = useState(true)
 
@@ -22,7 +22,7 @@ export default function Home() {
       search: search || undefined,
       status: status || undefined,
       class_type: classType || undefined,
-      region: region || undefined,
+      region,
     }
     Promise.all([api.getComplexes(params), api.getStats()])
       .then(([c, s]) => {
@@ -38,7 +38,6 @@ export default function Home() {
     setSearch('')
     setStatus('')
     setClassType('')
-    setRegion('')
     setVerifiedOnly(false)
   }
 
@@ -53,13 +52,6 @@ export default function Home() {
         </div>
 
         <section className="filter-compact filter-on-hero">
-          <select className="filter-region-top" value={region} onChange={(e) => setRegion(e.target.value)}>
-            {REGIONS.map((r) => (
-              <option key={r.slug || 'all'} value={r.slug}>
-                {t(`regions.${r.key}`)}
-              </option>
-            ))}
-          </select>
           <input
             placeholder={t('filter.search')}
             value={search}
@@ -81,7 +73,7 @@ export default function Home() {
             <input type="checkbox" checked={verifiedOnly} onChange={(e) => setVerifiedOnly(e.target.checked)} />
             <span>{t('filter.verified')}</span>
           </label>
-          {(search || status || classType || region || verifiedOnly) && (
+          {(search || status || classType || verifiedOnly) && (
             <button type="button" className="btn-reset btn-reset-hero" onClick={resetFilters}>{t('filter.reset')}</button>
           )}
         </section>

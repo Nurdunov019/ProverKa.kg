@@ -7,6 +7,7 @@ import AuthModal from './AuthModal'
 import CompareBar from './CompareBar'
 import LanguageSwitcher from './LanguageSwitcher'
 import WhatsAppButton from './WhatsAppButton'
+import RegionPicker from './RegionPicker'
 
 export default function Layout() {
   const { pathname } = useLocation()
@@ -25,13 +26,16 @@ export default function Layout() {
     <div className="app">
       <header className="header">
         <div className="container header-top">
-          <Link to="/" className="logo">
-            <span className="logo-mark">✓</span>
-            <div>
-              <span className="logo-text">ProverkaKG</span>
-              <span className="logo-tag">{t('tagline')}</span>
-            </div>
-          </Link>
+          <div className="header-brand">
+            <Link to="/" className="logo">
+              <span className="logo-mark">✓</span>
+              <div>
+                <span className="logo-text">ProverkaKG</span>
+                <span className="logo-tag">{t('tagline')}</span>
+              </div>
+            </Link>
+            <RegionPicker />
+          </div>
 
           <nav className="nav-menu">
             <Link to="/" className={pathname === '/' ? 'active' : ''}>{t('nav.complexes')}</Link>

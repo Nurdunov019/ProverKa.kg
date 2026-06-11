@@ -253,7 +253,7 @@ export default function Admin() {
                 <label>
                   Облус
                   <select value={form.region || 'bishkek'} onChange={(e) => setForm({ ...form, region: e.target.value })}>
-                    {REGIONS.filter((r) => r.slug).map((r) => (
+                    {REGIONS.map((r) => (
                       <option key={r.slug} value={r.slug}>{r.slug}</option>
                     ))}
                   </select>

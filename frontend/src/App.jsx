@@ -4,6 +4,7 @@ import { CompareProvider } from './context/CompareContext'
 import { FavoritesProvider } from './context/FavoritesContext'
 import { AuthModalProvider } from './context/AuthModalContext'
 import { LocaleProvider } from './context/LocaleContext'
+import { RegionProvider } from './context/RegionContext'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import ComplexDetail from './pages/ComplexDetail'
@@ -18,6 +19,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <LocaleProvider>
+      <RegionProvider>
       <AuthModalProvider>
       <AuthProvider>
         <FavoritesProvider>
@@ -38,6 +40,7 @@ export default function App() {
         </FavoritesProvider>
       </AuthProvider>
       </AuthModalProvider>
+      </RegionProvider>
       </LocaleProvider>
     </BrowserRouter>
   )
