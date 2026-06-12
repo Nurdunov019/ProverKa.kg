@@ -7,7 +7,6 @@ import { useLocale } from '../context/LocaleContext'
 import AuthModal from './AuthModal'
 import CompareBar from './CompareBar'
 import LanguageSwitcher from './LanguageSwitcher'
-import WhatsAppButton from './WhatsAppButton'
 import RegionPicker from './RegionPicker'
 import MobileNav from './MobileNav'
 import MobileProfileSheet from './MobileProfileSheet'
@@ -30,15 +29,15 @@ export default function Layout() {
     <div className="app">
       <header className="header">
         <div className="container header-top">
-          <Link to="/" className="logo">
-            <span className="logo-mark">✓</span>
+          <RegionPicker />
+
+          <Link to="/" className="logo header-logo">
+            <span className="logo-mark desktop-only-inline">✓</span>
             <div>
               <span className="logo-text">ProverkaKG</span>
               <span className="logo-tag desktop-only-inline">{t('tagline')}</span>
             </div>
           </Link>
-
-          <RegionPicker />
 
           <div className="header-mobile-actions">
             <LanguageSwitcher />
@@ -100,11 +99,13 @@ export default function Layout() {
       </footer>
 
       <MobileNav
-        profileOpen={profileOpen}
-        onProfileOpen={() => setProfileOpen((v) => !v)}
+        koshuuOpen={profileOpen}
+        onKoshuu={() => {
+          if (user) setProfileOpen((v) => !v)
+          else openLogin()
+        }}
       />
-      <MobileProfileSheet open={profileOpen} onClose={() => setProfileOpen(false)} />
-      <WhatsAppButton />
+      <MobileProfileSheet open={profileOpen && !!user} onClose={() => setProfileOpen(false)} />
       <AuthModal />
     </div>
   )

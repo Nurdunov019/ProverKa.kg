@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { WHATSAPP_URL } from '../constants/regions'
 import { useAuth } from '../context/AuthContext'
 import { useAuthModal } from '../context/AuthModalContext'
 import { useLocale } from '../context/LocaleContext'
@@ -54,9 +53,6 @@ export default function MobileProfileSheet({ open, onClose }) {
             <Link to="/admin" className="profile-menu-item" onClick={onClose}>{t('nav.admin')}</Link>
           )}
           <Link to="/compare" className="profile-menu-item" onClick={onClose}>{t('nav.compare')}</Link>
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="profile-menu-item" onClick={onClose}>
-            {t('whatsapp.label')}
-          </a>
           <div className="profile-menu-item profile-lang-row">
             <span>{t('profile.language')}</span>
             <LanguageSwitcher />

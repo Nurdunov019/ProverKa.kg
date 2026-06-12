@@ -28,16 +28,16 @@ function IconMap() {
   )
 }
 
-function IconProfile() {
+function IconAdd() {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
-      <circle cx="12" cy="8" r="3.5" stroke="currentColor" strokeWidth="1.6" />
-      <path d="M5 19c0-3.5 3-6 7-6s7 2.5 7 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M12 8v8M8 12h8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   )
 }
 
-export default function MobileNav({ profileOpen, onProfileOpen }) {
+export default function MobileNav({ koshuuOpen, onKoshuu }) {
   const { pathname, hash } = useLocation()
   const { t } = useLocale()
 
@@ -61,9 +61,9 @@ export default function MobileNav({ profileOpen, onProfileOpen }) {
         <IconMap />
         <span>{t('mobileNav.search')}</span>
       </Link>
-      <button type="button" className={itemClass(profileOpen)} onClick={onProfileOpen}>
-        <IconProfile />
-        <span>{t('mobileNav.profile')}</span>
+      <button type="button" className={itemClass(koshuuOpen)} onClick={onKoshuu}>
+        <IconAdd />
+        <span>{t('mobileNav.add')}</span>
       </button>
     </nav>
   )

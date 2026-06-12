@@ -52,6 +52,11 @@ button { cursor: pointer; border: none; }
   height: 64px;
   gap: 20px;
 }
+.header-logo { order: 1; }
+.region-picker { order: 2; }
+.nav-menu { order: 3; }
+.header-actions { order: 4; }
+.header-mobile-actions { order: 5; }
 
 .logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; min-width: 0; }
 .desktop-only { display: flex; }
@@ -1594,26 +1599,30 @@ button { cursor: pointer; border: none; }
 
   .header-top {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto auto;
-    grid-template-areas: "logo region lang";
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "region logo lang";
     align-items: center;
     gap: 8px;
     height: 52px;
     padding: 6px 0;
     flex-wrap: nowrap;
   }
-  .logo { grid-area: logo; min-width: 0; }
-  .logo-tag { display: none; }
-  .logo-text {
-    font-size: 14px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .logo-mark { width: 30px; height: 30px; font-size: 13px; border-radius: 8px; flex-shrink: 0; }
   .region-picker { grid-area: region; margin-left: 0; flex-shrink: 0; }
   .region-picker-btn { padding: 6px 9px; font-size: 12px; }
-  .header-mobile-actions { grid-area: lang; }
+  .header-logo {
+    grid-area: logo;
+    justify-self: center;
+    min-width: 0;
+    flex-direction: row;
+    gap: 0;
+  }
+  .header-logo .logo-tag { display: none; }
+  .header-logo .logo-text {
+    font-size: 16px;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+  .header-mobile-actions { grid-area: lang; flex-shrink: 0; }
 
   .whatsapp-float { display: none !important; }
   .footer { padding-bottom: 8px; }
