@@ -1437,10 +1437,13 @@ button { cursor: pointer; border: none; }
   z-index: 250;
   background: white;
   border-top: 1px solid var(--border);
-  padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+  padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
   grid-template-columns: repeat(4, 1fr);
-  gap: 4px;
+  gap: 2px;
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06);
+}
+.mobile-nav-admin {
+  grid-template-columns: repeat(5, 1fr);
 }
 .mobile-nav-item {
   display: flex;
@@ -1479,8 +1482,13 @@ button { cursor: pointer; border: none; }
 .mobile-nav-item span {
   line-height: 1.1;
   text-align: center;
-  max-width: 72px;
+  max-width: 64px;
+  font-size: 10px;
 }
+.mobile-nav-admin .mobile-nav-item span {
+  max-width: 52px;
+}
+.page-loader { padding: 40px 16px; }
 
 .profile-sheet-backdrop {
   position: fixed;
@@ -1669,6 +1677,7 @@ button { cursor: pointer; border: none; }
   .admin-sticky { top: 52px; margin: 0 -12px 12px; padding: 10px 12px 8px; }
   .admin-page h1 { font-size: 18px; }
   .main { overflow-x: hidden; max-width: 100%; }
+  .footer-admin-mobile { display: none; }
   .admin-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .hero-banner { min-height: 420px; }

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { useAuthModal } from '../context/AuthModalContext'
 import { useLocale } from '../context/LocaleContext'
@@ -8,6 +8,7 @@ export default function MobileProfileSheet({ open, onClose }) {
   const { user, logout, loading } = useAuth()
   const { openLogin, openRegister } = useAuthModal()
   const { t } = useLocale()
+  const { pathname } = useLocation()
 
   if (!open) return null
 
@@ -49,7 +50,7 @@ export default function MobileProfileSheet({ open, onClose }) {
               </button>
             </>
           )}
-          {user?.is_admin && (
+          {user?.is_admin && !pathname.startsWith('/admin') && (
             <Link to="/admin" className="profile-menu-item" onClick={onClose}>{t('nav.admin')}</Link>
           )}
           <Link to="/compare" className="profile-menu-item" onClick={onClose}>{t('nav.compare')}</Link>

@@ -26,7 +26,7 @@ export default function ComplexCard({ complex }) {
     <article className="complex-card elitka-card">
       <Link to={detailUrl} className="complex-image complex-image-link">
         {complex.image_url ? (
-          <img src={complex.image_url} alt={complex.name} />
+          <img src={complex.image_url} alt={complex.name} loading="lazy" decoding="async" />
         ) : (
           <div className="img-ph">ЖК</div>
         )}

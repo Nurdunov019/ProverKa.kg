@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
 import { CompareProvider } from './context/CompareContext'
@@ -6,14 +7,16 @@ import { AuthModalProvider } from './context/AuthModalContext'
 import { LocaleProvider } from './context/LocaleContext'
 import { RegionProvider } from './context/RegionContext'
 import Layout from './components/Layout'
+import PageLoader from './components/PageLoader'
 import Home from './pages/Home'
-import ComplexDetail from './pages/ComplexDetail'
-import LegalView from './pages/LegalView'
-import Login from './pages/Login'
-import Register from './pages/Register'
-import MapPage from './pages/Map'
-import Compare from './pages/Compare'
-import Admin from './pages/Admin'
+
+const ComplexDetail = lazy(() => import('./pages/ComplexDetail'))
+const LegalView = lazy(() => import('./pages/LegalView'))
+const Login = lazy(() => import('./pages/Login'))
+const Register = lazy(() => import('./pages/Register'))
+const MapPage = lazy(() => import('./pages/Map'))
+const Compare = lazy(() => import('./pages/Compare'))
+const Admin = lazy(() => import('./pages/Admin'))
 
 export default function App() {
   return (
@@ -27,13 +30,13 @@ export default function App() {
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
-              <Route path="/complex/:slug" element={<ComplexDetail />} />
-              <Route path="/legal/view/:token" element={<LegalView />} />
-              <Route path="/map" element={<MapPage />} />
-              <Route path="/compare" element={<Compare />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/admin" element={<Admin />} />
+              <Route path="/complex/:slug" element={<Suspense fallback={<PageLoader />}><ComplexDetail /></Suspense>} />
+              <Route path="/legal/view/:token" element={<Suspense fallback={<PageLoader />}><LegalView /></Suspense>} />
+              <Route path="/map" element={<Suspense fallback={<PageLoader />}><MapPage /></Suspense>} />
+              <Route path="/compare" element={<Suspense fallback={<PageLoader />}><Compare /></Suspense>} />
+              <Route path="/login" element={<Suspense fallback={<PageLoader />}><Login /></Suspense>} />
+              <Route path="/register" element={<Suspense fallback={<PageLoader />}><Register /></Suspense>} />
+              <Route path="/admin" element={<Suspense fallback={<PageLoader />}><Admin /></Suspense>} />
             </Route>
           </Routes>
         </CompareProvider>

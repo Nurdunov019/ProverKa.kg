@@ -76,7 +76,7 @@ export default function Layout() {
         <Outlet />
       </main>
 
-      <footer id="about" className="footer">
+      <footer id="about" className={`footer${pathname.startsWith('/admin') ? ' footer-admin-mobile' : ''}`}>
         <div className="container footer-grid">
           <div>
             <h3>ProverkaKG</h3>
