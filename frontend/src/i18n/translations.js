@@ -29,8 +29,8 @@ export const translations = {
       allClass: 'Бардык класс', economy: 'Эконом', comfort: 'Комфорт', business: 'Бизнес', premium: 'Премиум',
     },
     regions: {
-      bishkek: 'Бишкек', osh: 'Ош', manas: 'Манас', kant: 'Кант',
-      karakol: 'Каракол', tokmok: 'Токмок', issykKul: 'Ысык-Көл',
+      bishkek: 'Бишкек', osh: 'Ош', manas: 'Манас', issykKul: 'Ысык-Көл',
+      naryn: 'Нарын', talas: 'Талас', batken: 'Баткен',
     },
     whatsapp: { label: 'WhatsApp' },
     mobileNav: { label: 'Негизги меню', home: 'Башкы', objects: 'Объекттер', map: 'Карта', add: 'Кошуу' },
@@ -97,8 +97,8 @@ export const translations = {
       allClass: 'Все классы', economy: 'Эконом', comfort: 'Комфорт', business: 'Бизнес', premium: 'Премиум',
     },
     regions: {
-      bishkek: 'Бишкек', osh: 'Ош', manas: 'Манас', kant: 'Кант',
-      karakol: 'Каракол', tokmok: 'Токмок', issykKul: 'Иссык-Куль',
+      bishkek: 'Бишкек', osh: 'Ош', manas: 'Манас', issykKul: 'Иссык-Куль',
+      naryn: 'Нарын', talas: 'Талас', batken: 'Баткен',
     },
     whatsapp: { label: 'WhatsApp' },
     mobileNav: { label: 'Главное меню', home: 'Главная', objects: 'Объекты', map: 'Карта', add: 'Добавить' },
@@ -165,8 +165,8 @@ export const translations = {
       allClass: 'All classes', economy: 'Economy', comfort: 'Comfort', business: 'Business', premium: 'Premium',
     },
     regions: {
-      bishkek: 'Bishkek', osh: 'Osh', manas: 'Manas', kant: 'Kant',
-      karakol: 'Karakol', tokmok: 'Tokmok', issykKul: 'Issyk-Kul',
+      bishkek: 'Bishkek', osh: 'Osh', manas: 'Manas', issykKul: 'Issyk-Kul',
+      naryn: 'Naryn', talas: 'Talas', batken: 'Batken',
     },
     whatsapp: { label: 'WhatsApp' },
     mobileNav: { label: 'Main menu', home: 'Home', objects: 'Objects', map: 'Map', add: 'Add' },
